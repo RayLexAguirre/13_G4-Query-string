@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <link href="/assets/style.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    </ul> <!-- Con  <% %> podresmos ejecutar scripts de js por lo que ejecutaremos un if el que revisa si el numero recibido es par o no, si es par ejecuta un ciclo for el cual imprime (Para imprimir se ocupa <%= %> y despues del igual se coloca la variable) del numero uno hasta el numero recibido pero multiplicado por 2 y en el caso de los impares se realiza un ciclo que imprime desde el 1 hata el numero que se recibio-->
+    <% if(number % 2 == 0) {%>
+        <h1>Par</h1>
+        <% for (var i = 1; i <= number * 2; i++){  %> 
+        <li><%= i %></li>
+        <% } %>
+    <% } else {%>
+        <h1>Impar</h1>
+        <% for (var i = 1; i <= number; i++){ %>
+            <li><%= i %></li>
+        <% } %>
+    <% } %>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href ='/assets/style.css'>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+  </ul> 
+  <% let capitalized = Message[0].toUpperCase()%>
+
+  <% for(let i = 1; i < Message.length; i++) { %>
+  <% capitalized = capitalized + Message[i].toLowerCase(); %>
+  <% } %> 
+
+  <!-- Utilize el anterior codigo para poder tener la seguirdad de cuando las personas ingresen la palabra que se nesecita  -->
+
+    <h1>Person: <%= ID %></h1>
+    <h2>Mensaje: <%= capitalized %></h2>
+
+  <!-- Primero realize el codigo con ifs para asemejar a la practica anterior -->
+  <!-- Primero se revisa que la palabra a recibir si sea la correcta para despues ejecutar un ciclo -->
+  <!--
+    <% if (capitalized == 'Hello') { %> 
+        <% for(var i=0; i < Times; i++) { %>
+        <li>Hello <%= ID %></li>
+        <% } %> 
+    <%} else if (capitalized == 'Goodbye') { %>
+        <% for(var i=0; i < Times; i++) { %>
+        <li>Goodbye <%= ID %></li>
+        <% } %> 
+    <%} else if (capitalized == 'Welcome') { %>  
+      <% for(var i=0; i < Times; i++) { %>
+        <li>Welcome <%= ID %></li>
+        <% } %> 
+    <%} else { %>  
+        <% for(var i=0; i < Times; i++) { %>
+        <li><%= capitalized %> <%= ID %></li>
+        <% } %>
+        <% } %>
+-->
+<!-- Ahora se realizo lo mismo pero con break y dio el mismo resultado -->
+      
+      <% switch (capitalized) { 
+        case 'Hello': %> 
+          <% for(var i=0; i < Times; i++) { %>
+          <li>Hello <%= ID %></li>
+          <% } %> 
+          <% break; 
+        case 'Goodbye': %> 
+          <% for(var i=0; i < Times; i++) { %>
+          <li>Goodbye <%= ID %></li>
+          <% } %> 
+          <% break; 
+        case 'Welcome': %> 
+          <% for(var i=0; i < Times; i++) { %>
+          <li>Welcome <%= ID %></li>
+          <% } %> 
+          <% break; 
+        default: %> 
+          <% for(var i=0; i< Times; i++) { %>
+          <li><%= capitalized %> <%= ID %></li>
+          <% } %>
+        <% break; } %>  
+  </ul>
+
+  </body>
+</html>
